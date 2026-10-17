@@ -1,10 +1,13 @@
-import Nav from "@/components/Nav";
+import type { Metadata, Viewport } from "next";
+import "./globals.css";
 
-export default function AppLayout({ children }: { children: React.ReactNode }) {
+export const metadata: Metadata = { title: "Attendance Monitor", description: "NFC card attendance for professors" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1 };
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <>
-      <Nav />
-      <main className="mx-auto max-w-5xl p-4">{children}</main>
-    </>
+    <html lang="en">
+      <body>{children}</body>
+    </html>
   );
 }
